@@ -1,123 +1,32 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>login</title>
-    <style type="text/css">
-      form {
-        width: 600px;
-        margin: 200px auto;
-      }
-      div {
-        width: 100%;
-        margin: 15px auto;
-      }
-      label {
-        display: block;
-        padding: 20px;
-        font-size: 25px;
-      }
-      input {
-        width: 96%;
-        padding: 10px;
-        border: 1px solid #797979;
-        margin-left: 20px;
-        font-size: 20px;
-        border-radius: 3px;
-      }
-      button {
-        margin: 20px;
-        padding: 10px;
-        width: 100px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        border-radius: 5px;
-        background: linear-gradient(90deg, rgb(179, 45, 0), rgb(255, 204, 0));
-        font-size: 20px;
-        font-weight: bold;
-        color: whitesmoke;
-      }
-      span {
-        display: block;
-        margin-left: 20px;
-        color: red;
-        font-style: italic;
-      }
-    </style>
+    <link rel="stylesheet" href="/Toy project/style2.css" />
   </head>
   <body>
-    <form action="home.html" method="POST">
-      <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" placeholder="Username" />
-        <span></span>
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" />
-        <span></span>
-      </div>
-      <button id="log-in">Log-in</button>
-      <button id="signup">sign up</button>
-    </form>
+    <div class="container">
+      <form onsubmit="loginFn()">
+        <label for="username">Username</label><br />
+        <input type="text" name="username" id="username" /> <br />
+
+        <label for="password">Password</label><br />
+        <input type="password" name="password" id="password" /> <br />
+
+        <button class="loginBtn" type="submit">log-in</button>
+        <button
+          class="signupBtn"
+          type="button"
+          onclick="window.open('/signup.html')"
+        >
+          sign up
+        </button>
+        <p id="result"></p>
+      </form>
+    </div>
+    <script src="/Toy project/main.js"></script>
   </body>
 </html>
-
-<script type="text/javascript">
-  window.onload = () => {
-    this.localStorage.setItem("username", "site_user");
-    this.localStorage.setItem("password", "site_password");
-  };
-
-  var input = document.getElementsByTagName("input");
-  var login = document.getElementById("log-in");
-  var form = document.querySelector("form");
-  form.onsubmit = () => {
-    return false;
-  };
-
-  login.onclick = () => {
-    if (input[0].value != "" && input[1].value != "") {
-      if (
-        input[0].value == localStorage.getItem("username") &&
-        input[1].value == localStorage.getItem("password")
-      ) {
-        form.onsubmit = () => {
-          return 1;
-        };
-        document.cookie = "username=" + input[0].value;
-        document.cookie = "password=" + input[1].value;
-      } else {
-        if (input[0].value != localStorage.getItem("username")) {
-          input[0].nextElementSibling.textContent = "Username NOT match";
-          setTimeout(() => {
-            input[0].nextElementSibling.textContent = "";
-          }, 2000);
-        }
-        if (input[1].value != localStorage.getItem("password")) {
-          input[1].nextElementSibling.textContent = "Password NOT match";
-          setTimeout(() => {
-            input[1].nextElementSibling.textContent = "";
-          }, 2000);
-        }
-      }
-    } else {
-      if (input[0].value == "") {
-        input[0].nextElementSibling.textContent = "Username is empty";
-        setTimeout(() => {
-          input[0].nextElementSibling.textContent = "";
-        }, 2000);
-      }
-      if (input[1].value == "") {
-        input[1].nextElementSibling.textContent = "Password is empty";
-        setTimeout(() => {
-          input[1].nextElementSibling.textContent = "";
-        }, 2000);
-      }
-    }
-  };
-</script> -->
