@@ -1,0 +1,27 @@
+액세스 키
+AKIAR2S4AS3WMWJOHSDM
+비밀 액세스 키
+9ql2LcyI+22GbrJ21kvaW+Ydsx8Xy4wzKCKTiv0O
+
+- 터미널 준비하기 - 
+mkdir deploy
+cp app.py deploy/application.py
+cp -r templates deploy/templates
+pip freeze > deploy/requirements.txt
+cd deploy
+
+- appication.py 세팅하기 - 
+application = app = Flask(__name__)
+app.run()
+
+- 패키지 설치하기 - 
+pip install awsebcli
+
+- 보안 자격증명 - 
+eb init
+
+- 초기 설정 - 
+eb create myweb
+
+- 코드 수정 & 업데이트 - 
+eb deploy myweb

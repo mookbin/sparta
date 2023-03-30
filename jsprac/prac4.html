@@ -21,6 +21,7 @@
         padding: 10px;
         border: 1px solid;
       }
+
       .red {
         color: red;
       }
@@ -40,19 +41,18 @@
 
               let temp_html = ``;
               if (bike < 5) {
-                temp_html = `  <tr class="red">
+                temp_html = ` <tr class="red">
             <td>${name}</td>
             <td>${rack}</td>
             <td>${bike}</td>
           </tr>`;
               } else {
-                temp_html = `  <tr class>
+                temp_html = ` <tr>
             <td>${name}</td>
             <td>${rack}</td>
             <td>${bike}</td>
           </tr>`;
               }
-
               $("#names-q1").append(temp_html);
             });
           });

@@ -21,17 +21,19 @@
           .then((res) => res.json())
           .then((data) => {
             let rows = data["RealtimeCityAir"]["row"];
-            $("#names-q1").empty;
+            console.log(rows);
+            $("#names-q1").empty();
             rows.forEach((a) => {
               let gu_name = a["MSRSTE_NM"];
               let gu_mise = a["IDEX_MVL"];
 
               let temp_html = ``;
               if (gu_mise > 40) {
-                temp_html = `<li class="bad">${gu_name} : ${gu_mise}</li>`;
+                temp_html = `<li class="bad"> ${gu_name} : ${gu_mise}</li>`;
               } else {
-                temp_html = `<li>${gu_name} : ${gu_mise}</li>`;
+                temp_html = `<li> ${gu_name} : ${gu_mise}</li>`;
               }
+
               $("#names-q1").append(temp_html);
             });
           });

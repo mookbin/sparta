@@ -92,6 +92,7 @@
             let number = data["temp"];
             $("#temp").text(number);
           });
+
         fetch("http://spartacodingclub.shop/web/api/movie")
           .then((res) => res.json())
           .then((data) => {
@@ -106,21 +107,21 @@
 
               let star_image = "⭐".repeat(star);
 
-              let temp_html = ` <div class="col">
-                                                <div class="card h-100">
-                                                  <img
-                                                    src="${image}"
-                                                    class="card-img-top"
-                                                    alt="..."
-                                                  />
-                                                  <div class="card-body">
-                                                    <h5 class="card-title">${title}</h5>
-                                                    <p class="card-text">${desc}</p>
-                                                    <p>${star_image}</p>
-                                                    <p class="mycomment">${comment}</p>
-                                                  </div>
-                                                </div>
-                                              </div>`;
+              let temp_html = `   <div class="col">
+          <div class="card h-100">
+            <img
+              src="${image}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <p class="card-text">${desc}</p>
+              <p>${star_image}</p>
+              <p class="mycomment">${comment}</p>
+            </div>
+          </div>
+        </div>`;
               $("#cards").append(temp_html);
             });
           });

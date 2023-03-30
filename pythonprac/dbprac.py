@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sparta:test@cluster0.sdnb2cm.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://sparta:test@cluster0.zliwcuv.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
 
 # 저장 - 예시

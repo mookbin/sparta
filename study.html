@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      //함수를 선언합니다.
+      function callThreeTimes(callback) {
+        for (let i = 0; i < 3; i++) {
+          callback(i); // callback 이라는 매개변수는 함수이므로 호출할 수 있다.
+        }
+      }
+
+      function print(i) {
+        console.log(`${i}번째 함수 호출`);
+      }
+
+      // 함수 호출
+      callThreeTimes(print);
+    </script>
+  </head>
+  <body></body>
+</html>
